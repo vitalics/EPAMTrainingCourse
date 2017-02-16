@@ -1,9 +1,9 @@
 div.img{
-    background-image: url(styles/1.jpg)
+    background-image: url(1.jpg)
 }
 
-/*кейс 4: не сработает из-за путей, но ошибку в консоли не выведет*/
+/*кейс 4: не сработает из-за путей*/
 div.img2{
-    background-image: url(/styles/1.jpg)
+    background-image: url(1.jpg)
 }
 
