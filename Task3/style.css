@@ -4,15 +4,15 @@
     --even-element-color: red;
 }
 
+* {
+    letter-spacing: 10px;
+    line-height: 3rem;
+}
+
 html {
     font-size: var(--html-font-size);
     background-color: rgba(100, 100, 100, 0.3);
     text-align: center;
-}
-
-* {
-    letter-spacing: 10px;
-    line-height: 3rem;
 }
 
 div {
@@ -25,9 +25,9 @@ div:nth-child(even) {
 
 div:nth-child(odd) {
     color: var(--odd-element-color);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-.four~div {
+.four ~ div {
     text-transform: lowercase;
 }
