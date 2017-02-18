@@ -1,0 +1,33 @@
+:root {
+    --html-font-size: 20px;
+    --odd-element-color: blue;
+    --even-element-color: red;
+}
+
+html {
+    font-size: var(--html-font-size);
+    background-color: rgba(100, 100, 100, 0.3);
+    text-align: center;
+}
+
+* {
+    letter-spacing: 10px;
+    line-height: 3rem;
+}
+
+div {
+    text-transform: uppercase;
+}
+
+div:nth-child(even) {
+    color: var(--even-element-color);
+}
+
+div:nth-child(odd) {
+    color: var(--odd-element-color);
+    font-size: 3rem;
+}
+
+.four~div {
+    text-transform: lowercase;
+}
