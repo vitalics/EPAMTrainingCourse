@@ -1,0 +1,31 @@
+/*:root .ie11up div:nth-child(even) {
+    color: red;
+}*/
+
+* {
+    letter-spacing: 10px;
+    line-height: 3rem;
+}
+
+html {
+    font-size: 20px;
+    background-color: rgba(100, 100, 100, 0.3);
+    text-align: center;
+}
+
+div {
+    text-transform: uppercase;
+}
+
+div:nth-child(even) {
+    color: red
+}
+
+div:nth-child(odd) {
+    color: blue;
+    font-size: 2rem;
+}
+
+.four~div {
+    text-transform: lowercase;
+}
