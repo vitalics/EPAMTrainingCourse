@@ -1,0 +1,129 @@
+:root {
+    --background-image-height: 600px;
+    --margin-buttom-rottated-image: 4rem;
+    --help-width-container: 410px;
+    ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-image: url("images/socialsprites_bg.png");
+    height: var(--background-image-height);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-image: url("images/social-icons.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: var(--background-image-height);
+    margin-bottom: var(--margin-buttom-rottated-image);
+    -webkit-transform: rotate(-5deg);*/
+}
+
+.header-text__normalize {
+    /*-webkit-transform: rotate(5deg);*/
+}
+
+.header-text__border {
+    background-color: white;
+    border: 0.3rem solid black;
+    padding: 0.3rem;
+}
+
+.button__containers-2 {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    /*flex-direction: row;
+    text-align: center;*/
+}
+
+.button__containers-2.inverse {
+    background-color: black;
+    border: 1px solid white;
+}
+
+.help-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--help-width-container);
+    align-items: flex-end;
+}
+
+.item {
+    display: flex;
+    padding: 0.5em;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+    align-items: center;
+}
+
+@media all and (min-width: 40em) {
+    .item {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 60em) {
+    .item {
+        width: 33.33%;
+    }
+}
+
+div[type*="button"] {
+    border-radius: 10px;
+}
+
+.button__big {
+    width: 10em;
+    height: 1.25em;
+    font-size: 1.25em;
+}
+
+.button__normal {
+    width: 7em;
+    height: 1em;
+    font-size: 1em;
+}
+
+.button__small {
+    width: 6em;
+    height: 0.75em;
+    font-size: 1em;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
