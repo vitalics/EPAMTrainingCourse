@@ -1,0 +1,39 @@
+.form {
+    box-shadow: 10px 10px 5px #888888;
+    width: 35rem;
+}
+
+.header__name {
+    background-color: rgba(237, 237, 237, 1);
+}
+
+.header__name--bold {
+    font-weight: bold;
+}
+
+.submitButton__padding--blue {
+    padding: 5px;
+    background-color: rgb(0, 133, 186);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.box__padding {
+    padding: 1rem 0;
+}
+
+.multiChoice__padding {
+    padding: 0.3rem 0;
+}
+
+[width*="fullWidth"] {
+    width: calc(100% - 4rem);
+}
+
+.box__shadow {
+    box-shadow: 10px 0 5px #888888;
+}
+
+.multiChoice__label {
+    margin-top: 10px;
+}

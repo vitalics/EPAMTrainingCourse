@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form method="POST" action="" class="form">
+        <div class="form__header">
+            <span class="header header__name--bold">Form Action</span>
+            <span class="header header__name">_mc4wp_action</span>
+        </div>
+        <div class="form__description">
+
+            <div class="description box__padding description__label">
+                This field will allow your visitors to choose wheether they would be like to subscribe or unsubcribe
+            </div>
+
+            <div class="field">
+                <div class="field__box box__padding">
+                    <div class="box__label">
+                        Field Label
+                    </div>
+
+                    <div class="box__input">
+                        <input class="input--fullWidth" type="text" value="Form Action" required width="fullWidth">
+                    </div>
+
+                </div>
+
+                <div class="field__ratioChoice">
+
+                    <div class="ratioChoice__label">
+                        Choice Type
+                    </div>
+
+                    <div class="ratioChoice__input">
+                        <select>
+                            <option value="Radio Buttons">Radio Buttons</option>
+                            <option value="Checkbox Buttons">Checkbox Buttons</option>
+                            <option value="Aria Buttons">Aria Label</option>
+                            <option value="Lol Buttons">Lol</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="multiChoice__label">
+                    Choices
+                </div>
+                <div class="field__multiChoice box__padding box__shadow" width="fullWidth">
+
+
+                    <div class="multiChoice__firstChoice multiChoice__padding box__padding">
+                        <input type="radio" placeholder="Radio Buttons" checked="">
+                        <input type="text" value="Subscribe" width="fullWidth">
+                        <span class="icon-cancel_circle"></span>
+                    </div>
+
+                    <div class="multiChoice__secondChoice multiChoice__padding box__padding">
+                        <input type="radio" placeholder="Radio Buttons">
+                        <input type="text" value="Unsubscribe" width="fullWidth">
+                        <span class="icon-cancel_circle"></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="form__choices">
+
+        </div>
+
+        <div class="form__checkbox box__padding">
+            <input type="checkbox"> Wrap in paragraph tags
+            <!--<input type="submit" class="form__button"> Add to form-->
+
+        </div>
+
+        <div class="form__submitButton box__padding">
+            <button type="submit" class="submitButton__padding--blue">
+                Add to form
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>
