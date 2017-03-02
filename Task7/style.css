@@ -1,0 +1,25 @@
+@import url(./styles/style.css);
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url('./font/fontello.eot?61862127');
+    src: url('./font/fontello.eot?61862127#iefix') format('embedded-opentype'), url('./font/fontello.woff?61862127') format('woff'), url('./font/fontello.ttf?61862127') format('truetype'), url('./font/fontello.svg?61862127#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
