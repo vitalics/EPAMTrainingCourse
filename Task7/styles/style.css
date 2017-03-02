@@ -3,51 +3,14 @@
     --content-block-size: 300px;
 }
 
-.mp__header {
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #888888;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.mp__header__logo {
-    flex-grow: 1;
-    font-size: 1.25rem;
-}
-
-.mp__logo__header {
-    font-size: var(--webkit-xxx-large);
-}
-
-.mp__logo__footer {
-    font-size: small;
-}
-
 .mp__content {
     width: 100%;
     display: block;
     flex-grow: 1;
 }
 
-.mp__footer {
-    width: 100%;
-    display: block;
-}
-
-.mp__header__menu {
-    flex-grow: 1;
-    font-size: large;
-}
-
-.menuList {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-}
-
 .mp__content__imagin {
-    height: 300px;
+    height: var(--content-block-size);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -59,8 +22,8 @@
     background-image: url(../images/mountain.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
 }
 
 .mp__imagin__content {
@@ -94,36 +57,19 @@
     margin: 1rem;
 }
 
-[class *="item--warning"] {
+.item--warning {
     padding: 1rem;
     background-color: rgb(218, 85, 80);
 }
 
-[class *="item--success"] {
+.item--success {
     padding: 1rem;
     background-color: rgb(91, 184, 93);
 }
 
-.mp__content__grid-4 {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-grow: 4;
-    height: var(--content-block-size);
-}
-
-.mp__grid-4__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    border: 1px solid white;
-}
-
-.grid-4--small {
-    height: calc(var(--content-block-size) * 0.5);
+.item--detail {
+    padding: 1rem;
+    background-color: rgb(1, 117, 216);
 }
 
 .item--liteGray {
@@ -146,75 +92,43 @@
     font-size: x-large;
 }
 
-.mp__content__grid-3 {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-grow: 3;
-    height: calc(var(--content-block-size) * 2);
-}
-
-.mp__grid-3__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    border: 1px solid white;
-}
-
-.item--nature1 {
-    background-image: url(../images/nature1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.item--thee-two {
-    height: calc(var(--content-block-size) * 2);
-    flex-grow: 2;
-    border: 1px solid white;
-}
-
-.mp__column__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: var(--content-block-size);
-    border: 1px solid white;
-}
-
-.item--three-one {
-    flex-grow: 1;
-    border: 1px solid white;
-    height: calc(var(--content-block-size) * 2);
-}
-
-.mp__content__grid-2 {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-grow: 2;
-    /*height: cacl(var(--content-block-size) * 1.5);*/
-}
-
 .item--large {
     height: calc(var(--content-block-size) * 1.5);
     border: 1px solid white;
 }
 
-.mp__grid-2__item {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+.item--small {
     border: 1px solid white;
 }
 
-.item--small {
-    border: 1px solid white;
+.item.item--start {
+    align-items: flex-start;
+    padding: 3rem;
+}
+
+.item--pink {
+    background-color: rgb(237, 187, 238);
+}
+
+.item--marine {
+    background-color: rgb(146, 196, 247);
+}
+
+.item--brown {
+    background-color: rgb(171, 85, 34);
+}
+
+.item--blue {
+    background-color: rgb(34, 135, 187);
+}
+
+.item--green {
+    background-color: rgb(69, 153, 103);
+}
+
+.item--darkYellow {
+    background-color: rgb(164, 165, 48);
+}
+.item--column{
+    flex-direction: column;
 }
