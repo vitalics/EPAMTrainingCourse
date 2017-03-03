@@ -53,8 +53,18 @@
 .containerButtons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     margin: 1rem;
+}
+
+.item--margin {
+    margin: 0 2rem;
+}
+
+.item--nature1 {
+    background-image: url(../images/nature1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .item--warning {
@@ -129,6 +139,20 @@
 .item--darkYellow {
     background-color: rgb(164, 165, 48);
 }
-.item--column{
+
+.item--column {
     flex-direction: column;
+}
+
+.item--fullWidth {
+    width: 100%;
+}
+
+.mp__item__block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 0;
 }
