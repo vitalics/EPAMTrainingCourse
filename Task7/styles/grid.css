@@ -1,4 +1,4 @@
-.mp__column__item {
+.mp--column__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
     height: calc(var(--content-block-size) * 2);
 }
 
-.mp__content__grid-2 {
+.mp--content__grid-2 {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -25,7 +25,7 @@
     flex-direction: column;
 }
 
-.mp__grid-2__item {
+.mp--grid-2__item {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -35,7 +35,7 @@
     border: 1px solid white;
 }
 
-.mp__content__grid-4 {
+.mp--content__grid-4 {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -43,7 +43,7 @@
     height: var(--content-block-size);
 }
 
-.mp__grid-4__item {
+.mp--grid-4__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,7 +56,7 @@
     height: calc(var(--content-block-size) * 0.5);
 }
 
-.mp__content__grid-3 {
+.mp--content__grid-3 {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -65,7 +65,7 @@
     height: calc(var(--content-block-size) * 2);
 }
 
-.mp__grid-3__item {
+.mp--grid-3__item {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

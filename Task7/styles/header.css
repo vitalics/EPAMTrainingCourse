@@ -1,4 +1,4 @@
-.mp__header {
+.mp--header {
     width: 100%;
     display: flex;
     border-bottom: 1px solid #888888;
@@ -6,30 +6,30 @@
     justify-content: space-between;
 }
 
-.mp__header__logo {
+.mp--header__logo {
     flex-grow: 1;
     font-size: 1.25rem;
 }
 
-.mp__logo__header {
+.mp--logo__header {
     font-size: var(--webkit-xxx-large);
 }
 
-.mp__logo__footer {
+.mp--logo__footer {
     font-size: small;
 }
 
-.mp__header__menu {
+.mp--header__menu {
     flex-grow: 1;
     font-size: large;
 }
 
-.mp__menu__list {
+.mp--menu__list {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
 }
 
-.mp__item__header {
+.mp--item__header {
     font-size: xx-large;
 }

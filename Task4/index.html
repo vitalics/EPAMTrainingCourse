@@ -74,9 +74,15 @@ frames - страница в странице
                 <span class="text__green__big">Good</span>
             </a>
         </div>
-        <iframe src="./frames/first.html" name="status" frameborder="1"></iframe>
+        <iframe class="iframe" src="./frames/first.html" name="status" frameborder="1"></iframe>
     </main>
 
+    <script>
+        function Tunnel() {
+            alert('work');
+        }
+        var frame = document.getElementsByClassName('iframe').contentDocument.targetFunction(Tunnel());
+    </script>
     <!--</div>
     <div class="buttom__good__right">
         <a class="icoon__href" href="./frames/second.html" target="status">

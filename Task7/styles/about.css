@@ -1,4 +1,4 @@
-.mp__content__about {
+.mp--content__about {
     height: var(--content-block-size);
     display: flex;
     align-content: center;
@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-.mp__about__backgroundImage {
+.mp--about__backgroundImage {
     height: 1280px;
     background-image: url(../images/mountain.jpg);
     background-size: cover;
@@ -15,7 +15,7 @@
     -webkit-filter: blur(3px);
 }
 
-.mp__about__content {
+.mp--about__content {
     width: 100%;
     position: absolute;
     display: flex;
@@ -25,7 +25,7 @@
     -moz-transform: translate(0%, -200%);
 }
 
-.mp__content__title {
+.mp--content__title {
     font-size: xx-large;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 
-.mp__content__description {
+.mp--content__description {
     width: 100%;
     display: flex;
     align-items: center;
