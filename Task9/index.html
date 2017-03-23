@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+        <form class="main__form form" action="" method="POST">
+            <div class="form__header header">
+                <span class="header header--bold">Form Action</span>
+                <span class="header header--gray">_mc4wp_action</span>
+            </div>
+
+            <div class="form__content content">
+                <div class="content__label">
+                    This field will allow your visitors to choose wheether they would be like to subscribe or unsubcribe
+                </div>
+
+                <div class="content__fields fields">
+
+                    <div class="fields__box box">
+                        <div class="box__name">Field Label</div>
+                        <div class="box__control control">
+                            <input type="text" class="control__input " value="Form Action">
+                        </div>
+                    </div>
+
+                    <div class="fields-box box">
+
+                        <div class="box-name">Chioce type</div>
+
+                        <div class="box-control control">
+
+                            <select class="control__select">
+                                <option value="Radio Buttons">Radio Buttons</option>
+                                <option value="Checkbox Buttons">Checkbox Buttons</option>
+                                <option value="Aria Buttons">Aria Label</option>
+                                <option value="Lol Buttons">Lol</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fields-choices choice">
+
+                        <div class="choice__name">Label</div>
+
+                        <div class="choce__control control">
+                            <div class="control__item item">
+                                <input name="isSubscribe" type="radio" placeholder="Radio Buttons" onclick="Subscribe()" checked="">
+                                <input type="text" class="item item--fullWidth" value="Subscribe">
+                                <span class="icon-cancel_circle"></span>
+                            </div>
+
+                            <div class="control__item item">
+                                <input name="isSubscribe" type="radio" placeholder="Radio Buttons" onclick="Unsubscribe()">
+                                <input type="text" class="item item--fullWidth" value="Unsubscribe">
+                                <span class="icon-cancel_circle"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-isWrap isWrap">
+                        <input class="isWrap__item" onclick="Wrap()" type="checkbox" checked=""> Wrap in paragraph tags
+                    </div>
+                </div>
+            </div>
+            <div class="form-submitButton submitButton">
+                <button onclick="Save()" class="submitButton submitButton--blue">Save</button>
+            </div>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
