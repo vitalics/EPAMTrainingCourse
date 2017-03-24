@@ -1,0 +1,85 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.calendar-mounth {
+    padding: 70px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1abc9c;
+    color: white;
+}
+
+.mounth__prev {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.mounth__next {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 10px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.mounth-mounthYear {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.calendar-weekday {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ddd;
+}
+
+.weekday__item {
+    padding: 10px 0;
+    color: #666;
+}
+
+.week--days {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+}
+
+.calendar-week {
+    display: flex;
+    flex-direction: column;
+    color: #777;
+    background-color: #eee;
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+.item--active {
+    color: white;
+    background-color: #1abc9c;
+}
+
+.week1__item {
+    padding: 5px 5px;
+}
+
+.week2__item {
+    padding: 5px 5px;
+}
+
+.week3__item {
+    padding: 5px 5px;
+}
+
+.week4__item {
+    padding: 5px 5px;
+}
+
+.week5__item {
+    padding: 5px 5px;
+}
