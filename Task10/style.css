@@ -65,21 +65,31 @@
 }
 
 .week1__item {
+    width: calc(100% / 7);
+    text-align: center;
     padding: 5px 5px;
 }
 
 .week2__item {
+    width: calc(100% / 7);
+    text-align: center;
     padding: 5px 5px;
 }
 
 .week3__item {
+    width: calc(100% / 7);
+    text-align: center;
     padding: 5px 5px;
 }
 
 .week4__item {
+    width: calc(100% / 7);
+    text-align: center;
     padding: 5px 5px;
 }
 
 .week5__item {
+    width: calc(100% / 7);
+    text-align: center;
     padding: 5px 5px;
 }
