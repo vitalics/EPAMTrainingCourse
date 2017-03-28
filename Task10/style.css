@@ -70,6 +70,11 @@
     padding: 5px 5px;
 }
 
+.item:hover {
+    color: white;
+    background-color: #1abc9c;
+}
+
 .week2__item {
     width: calc(100% / 7);
     text-align: center;
@@ -92,4 +97,14 @@
     width: calc(100% / 7);
     text-align: center;
     padding: 5px 5px;
+}
+
+.week6__item {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.week6--hidden {
+    display: none;
 }
