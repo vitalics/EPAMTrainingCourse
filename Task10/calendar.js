@@ -1,18 +1,28 @@
-var calendar = (function () {
+var calendar = function () {
     var moment;
     var MAXDAY;
     var month;
     var year;
+    var day;
     var monthNames;
     var days;
     var monthLength;
     var dayCounter;
     var isHaveWeek6 = false;
+    var isActiveItem = false;
+    var activeItem;
+
+    /* Render functions */
+    Init();
+    RenderHtml();
+    FillCalendar(month, year);
+    CreateEvents();
+
     function Init() {
         moment = new Date();
 
         days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
+        day = moment.getDate();
         var currentDaysNumber = moment.getDay() + 1;
         if (currentDaysNumber > 7) {
             currentDaysNumber = 0;
@@ -28,112 +38,6 @@ var calendar = (function () {
         monthLength = GetDaysInMonth(month, year);
 
         MAXDAY = days.length;
-    }
-
-    /* Render functions */
-    Init();
-    RenderHtml();
-    FillCalendar(month, year);
-    CreateEvents();
-
-    function GetDaysInMonth(currentMonthAsNumber, year) {
-        var monthLength = new Date(year, currentMonthAsNumber, 0).getDate()
-        return monthLength;
-    }
-
-    function GetStartingDayOfWeek(month, year) {
-        var firstDay = new Date(year, month, 1).getDay();
-        return firstDay;
-    }
-
-    function weekAndDay() {
-        days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            prefixes = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
-
-        return prefixes[0 | date.getDate() / 7] + ' ' + days[date.getDay()];
-
-    }
-    function ClearCalendar() {
-        document.querySelector('.mounthYear__year').innerHTML = '';
-        document.querySelector('.mounthYear__mounth').innerHTML = '';
-        dayCounter = 1;
-
-        while (dayCounter < monthLength) {
-            ClearCalendarByWeek('.week1__item');
-            ClearCalendarByWeek('.week2__item');
-            ClearCalendarByWeek('.week3__item');
-            ClearCalendarByWeek('.week4__item');
-            ClearCalendarByWeek('.week5__item');
-            ClearCalendarByWeek('.week6__item');
-        }
-        dayCounter = 1;
-    }
-
-    function FillCalendar(month, year) {
-        document.querySelector('.mounthYear__year').innerHTML = year;
-        document.querySelector('.mounthYear__mounth').innerHTML = monthNames[month];
-        console.log(monthNames[month]);
-        for (var index = 0; index < days.length; index++) {
-            document.querySelectorAll('.weekday__item')[index].innerHTML = days[index];
-        }
-
-        var startingDay = GetStartingDayOfWeek(month, year);
-
-        dayCounter = 1;
-        // find number of days in month
-        monthLength = GetDaysInMonth(month + 1, year);
-
-        while (dayCounter < monthLength) {
-
-            FillCalendarByWeek('.week1__item', startingDay, dayCounter);
-            FillCalendarByWeek('.week2__item', 0, dayCounter);
-            FillCalendarByWeek('.week3__item', 0, dayCounter);
-            FillCalendarByWeek('.week4__item', 0, dayCounter);
-            FillCalendarByWeek('.week5__item', 0, dayCounter);
-            FillCalendarByWeek('.week6__item', 0, dayCounter);
-        }
-        IsHaveWeek6(month, year);
-        dayCounter = 1;
-    }
-    function ClearCalendarByWeek(week) {
-        for (var index = 0; index < MAXDAY; index++) {
-            document.querySelectorAll(`${week}`)[index].innerHTML = '';
-            dayCounter++;
-        }
-    }
-
-    function FillCalendarByWeek(week, startingDayOfWeek, startingDateForFill) {
-
-        for (var index = startingDayOfWeek; index < MAXDAY; index++) {
-            if (dayCounter == moment.getDate()) {
-                //document.querySelectorAll(`${week}`)[index].className += " item--active"
-            }
-            if (startingDateForFill > monthLength) {
-                break;
-            }
-            document.querySelectorAll(`${week}`)[index].innerHTML = startingDateForFill;
-
-            startingDateForFill++;
-            dayCounter++;
-        }
-    }
-    function IsHaveWeek6(month, year) {
-        var isHaveWeek6 = false;
-        var week6 = document.querySelector('.week6');
-        monthLength = GetDaysInMonth(month + 1, year);
-        var startingDay = GetStartingDayOfWeek(month, year);
-        if ((startingDay == 7 && (monthLength == 30 || monthLength == 31)) || (startingDay == 6 && (monthLength == 30 || monthLength == 31))) {
-            if (week6.className.includes('week6--hidden')) {
-                week6.className = ' week6 week--days';
-            }
-            isHaveWeek6 = true;
-            return isHaveWeek6
-        }
-        else {
-            week6.className += ' week6--hidden';
-            isHaveWeek6 = false;
-            return isHaveWeek6;
-        }
     }
 
     function RenderHtml() {
@@ -196,9 +100,120 @@ var calendar = (function () {
         return parent.appendChild(DIV);
     }
 
+    function ClearCalendarByWeek(week) {
+        for (var index = 0; index < MAXDAY; index++) {
+            document.querySelectorAll(`${week}`)[index].innerHTML = '';
+            dayCounter++;
+        }
+    }
+
+    function ClearCalendar() {
+        document.querySelector('.mounthYear__year').innerHTML = '';
+        document.querySelector('.mounthYear__mounth').innerHTML = '';
+        dayCounter = 1;
+
+        while (dayCounter < monthLength) {
+            ClearCalendarByWeek('.week1__item');
+            ClearCalendarByWeek('.week2__item');
+            ClearCalendarByWeek('.week3__item');
+            ClearCalendarByWeek('.week4__item');
+            ClearCalendarByWeek('.week5__item');
+            ClearCalendarByWeek('.week6__item');
+        }
+        dayCounter = 1;
+    }
+
+    function GetDaysInMonth(currentMonthAsNumber, year) {
+        var monthLength = new Date(year, currentMonthAsNumber, 0).getDate()
+        return monthLength;
+    }
+
+    function GetStartingDayOfWeek(month, year) {
+        var firstDay = new Date(year, month, 1).getDay();
+        return firstDay;
+    }
+
+
+
+    function FillCalendar(month, year) {
+        document.querySelector('.mounthYear__year').innerHTML = year;
+        document.querySelector('.mounthYear__mounth').innerHTML = monthNames[month];
+        for (var index = 0; index < days.length; index++) {
+            document.querySelectorAll('.weekday__item')[index].innerHTML = days[index];
+        }
+
+        var startingDay = GetStartingDayOfWeek(month, year);
+
+        dayCounter = 1;
+        // find number of days in month
+        monthLength = GetDaysInMonth(month + 1, year);
+
+        while (dayCounter < monthLength) {
+
+            FillCalendarByWeek('.week1__item', startingDay, dayCounter);
+            FillCalendarByWeek('.week2__item', 0, dayCounter);
+            FillCalendarByWeek('.week3__item', 0, dayCounter);
+            FillCalendarByWeek('.week4__item', 0, dayCounter);
+            FillCalendarByWeek('.week5__item', 0, dayCounter);
+            FillCalendarByWeek('.week6__item', 0, dayCounter);
+        }
+        IsHaveWeek6(month, year);
+        dayCounter = 1;
+    }
+    String.prototype.replaceAll = function (search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
+
+    function FillCalendarByWeek(week, startingDayOfWeek, startingDateForFill) {
+
+        for (var index = startingDayOfWeek; index < MAXDAY; index++) {
+            if (dayCounter == moment.getDate()) {
+                //document.querySelectorAll(`${week}`)[index].className += " item--active"
+            }
+            if (startingDateForFill > monthLength) {
+                break;
+            }
+            document.querySelectorAll(`${week}`)[index].innerHTML = startingDateForFill;
+
+            startingDateForFill++;
+            dayCounter++;
+        }
+    }
+    function IsHaveWeek6(month, year) {
+        var isHaveWeek6 = false;
+        var week6 = document.querySelector('.week6');
+        monthLength = GetDaysInMonth(month + 1, year);
+        var startingDay = GetStartingDayOfWeek(month, year);
+        if ((startingDay == 7 && (monthLength == 30 || monthLength == 31)) || (startingDay == 6 && (monthLength == 30 || monthLength == 31))) {
+            if (week6.className.includes('week6--hidden')) {
+                week6.className = week6.className.replaceAll('week6--hidden', '');
+            }
+            isHaveWeek6 = true;
+            return isHaveWeek6
+        }
+        else {
+            week6.className += ' week6--hidden';
+            isHaveWeek6 = false;
+            return isHaveWeek6;
+        }
+    }
+
+    function IsHaveStringInSubstring(string, substring) {
+        if (string.indexOf(substring) !== -1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     function CreateEvents() {
         var monthNext = document.querySelector('.mounth__next').addEventListener('click', NextMonth);
         var monthPrev = document.querySelector('.mounth__prev').addEventListener('click', PrevMonth);
+        for (var index = 1; index < MAXDAY; index++) {
+            var week = document.querySelectorAll(`.week${index}`)[0].addEventListener('click', СhoosenDay);
+        }
 
         function NextMonth(event) {
             if (month >= 11) {
@@ -222,7 +237,43 @@ var calendar = (function () {
                 FillCalendar(--month, year);
             }
         }
+        function СhoosenDay(event) {
+            var target = event.target;
+            day = target.innerHTML;
+            if (isActiveItem) {
+                activeItem.className = activeItem.className.replaceAll(' item--active', ' ');
+                target.className += ' item--active';
+            }
+            if (day == '' && IsHaveStringInSubstring(target.className, "week1__item")) {
+                isActiveItem = true;
+                target.className = target.className.replaceAll('item--active', '');
+
+                PrevMonth();
+            }
+            if (day == '' && (IsHaveStringInSubstring(target.className, "week5__item") || IsHaveStringInSubstring(target.className, "week6__item"))) {
+                isActiveItem = true;
+                target.className = target.className.replaceAll('item--active', '');
+
+                NextMonth();
+            }
+            if (!isActiveItem && IsHaveStringInSubstring(target.className, ' item--active')) {
+                isActiveItem = false;
+                target.className = target.className.replaceAll('item--active', '');
+            }
+            else {
+                isActiveItem = true;
+                if (!IsHaveStringInSubstring(target.className, 'item--active')) {
+                    target.className += ' item--active';
+
+
+                }
+                activeItem = target;
+            }
+            dataPicker.value = month + 1 + '/' + target.innerHTML + '/' + year;
+            return month + 1 + '/' + target.innerHTML + '/' + year;
+        }
     }
 
-    return calendar;
-})();
+};
+calendar();
+var dataPicker = document.querySelector('.datapicker');
