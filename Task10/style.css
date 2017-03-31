@@ -52,7 +52,8 @@
 
 .calendar-week {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     color: #777;
     background-color: #eee;
     font-size: 12px;
@@ -64,8 +65,8 @@
     background-color: #1abc9c;
 }
 
-.week1__item {
-    width: calc(100% / 7);
+.week__item {
+    width: calc(100% / 7.5);
     text-align: center;
     padding: 5px 5px;
 }
@@ -73,38 +74,4 @@
 .item:hover {
     color: white;
     background-color: #1abc9c;
-}
-
-.week2__item {
-    width: calc(100% / 7);
-    text-align: center;
-    padding: 5px 5px;
-}
-
-.week3__item {
-    width: calc(100% / 7);
-    text-align: center;
-    padding: 5px 5px;
-}
-
-.week4__item {
-    width: calc(100% / 7);
-    text-align: center;
-    padding: 5px 5px;
-}
-
-.week5__item {
-    width: calc(100% / 7);
-    text-align: center;
-    padding: 5px 5px;
-}
-
-.week6__item {
-    width: calc(100% / 7);
-    text-align: center;
-    padding: 5px 5px;
-}
-
-.week6--hidden {
-    display: none;
 }

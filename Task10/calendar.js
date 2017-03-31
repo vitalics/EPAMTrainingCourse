@@ -1,4 +1,4 @@
-var calendar = function () {
+var calendar = function (element) {
     var moment;
     var MAXDAY;
     var month;
@@ -11,6 +11,7 @@ var calendar = function () {
     var isHaveWeek6 = false;
     var isActiveItem = false;
     var activeItem;
+    var dataPicker;
 
     /* Render functions */
     Init();
@@ -19,6 +20,7 @@ var calendar = function () {
     CreateEvents();
 
     function Init() {
+
         moment = new Date();
 
         days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -41,7 +43,10 @@ var calendar = function () {
     }
 
     function RenderHtml() {
-        var calendar = document.querySelector('.calendar');
+
+        calendar = document.querySelector('.calendar');
+        dataPicker = document.querySelector('.datapicker');
+
         var calendarMonth = CreateDivAndAppend(calendar, 'calendar-mounth mounth');
 
         calendarMonth = document.querySelector('.calendar-mounth');
@@ -160,16 +165,12 @@ var calendar = function () {
         IsHaveWeek6(month, year);
         dayCounter = 1;
     }
-    String.prototype.replaceAll = function (search, replacement) {
-        var target = this;
-        return target.split(search).join(replacement);
-    };
 
     function FillCalendarByWeek(week, startingDayOfWeek, startingDateForFill) {
 
         for (var index = startingDayOfWeek; index < MAXDAY; index++) {
-            if (dayCounter == moment.getDate()) {
-                //document.querySelectorAll(`${week}`)[index].className += " item--active"
+            if (dayCounter == moment.getDate() && month == moment.getMonth() && year == moment.getFullYear()) {
+                document.querySelectorAll(`${week}`)[index].className += " item--active"
             }
             if (startingDateForFill > monthLength) {
                 break;
@@ -262,18 +263,20 @@ var calendar = function () {
             }
             else {
                 isActiveItem = true;
+
                 if (!IsHaveStringInSubstring(target.className, 'item--active')) {
                     target.className += ' item--active';
-
-
                 }
                 activeItem = target;
             }
             dataPicker.value = month + 1 + '/' + target.innerHTML + '/' + year;
-            return month + 1 + '/' + target.innerHTML + '/' + year;
         }
     }
-
 };
-calendar();
-var dataPicker = document.querySelector('.datapicker');
+
+String.prototype.replaceAll = function (search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+
