@@ -1,8 +1,11 @@
-export class MyClass {
-    constructor(someValue) {
-        this._someValue = someValue;
+export class PromiseXhr {
+    makeRequest(method, url) {
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.onload = resolve;
+            xhr.onerror = reject;
+            xhr.send();
+        })
     }
-    getSomeValue() {
-        return this._someValue;
-    }
-} 
+}

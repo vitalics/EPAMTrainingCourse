@@ -7,7 +7,7 @@
     "prestart": "webpack",
     "start": "webpack --config webpack.config.js --progress",
     "poststart": "webpack-dev-server --open --port 3000 --compress",
-    "postinstall": "webpack -g"
+    "postinstall": "webpack -g && webpack-dev-server -g"
   },
   "author": "",
   "license": "ISC",

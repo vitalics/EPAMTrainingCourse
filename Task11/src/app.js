@@ -1,5 +1,6 @@
-import { MyClass } from './promise.js';
+import { PromiseXhr } from './promise.js';
 
-let cl = new MyClass(5);
-
-console.log(cl.getSomeValue());
+let promiseXhr = new PromiseXhr();
+promiseXhr.makeRequest('GET', 'https://epamtraining-24a9b.firebaseio.com/0.json').then((e) => {
+    alert(e.target.response);
+})
