@@ -1,6 +1,15 @@
 import { PromiseXhr } from './promise.js';
 
-let promiseXhr = new PromiseXhr();
-promiseXhr.makeRequest('GET', 'https://epamtraining-24a9b.firebaseio.com/0.json').then((e) => {
-    alert(e.target.response);
-})
+class Main {
+    constructor() {
+        let promiseXhr = new PromiseXhr();
+        let userName = prompt('enter your user name:');
+        this.getInfoByUserName(promiseXhr, 'https', 'api.github.com/users', userName);
+    }
+    getInfoByUserName(promiseXhr, protocol, link, userName) {
+        promiseXhr.getRequest(`${protocol}://${link}/${userName}`).then((e) => {
+            alert(e);
+        });
+    }
+}
+let main = new Main();
