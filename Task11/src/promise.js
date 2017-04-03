@@ -10,7 +10,7 @@ export class PromiseXhr {
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     if (this.status == 200) {
-                        resolve( this.response);
+                        resolve(this.response);
                     }
                 }
             }
